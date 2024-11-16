@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>سبد خرید</title>
+</head>
+<body>
+    <div class="container mt-4">
+        <h1>سبد خرید</h1>
+        {% if cart_items %}
+            <ul class="list-group">
+                {% for item in cart_items %}
+                    <li class="list-group-item">
+                        {{ item.product.name }} - {{ item.quantity }} عدد
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>سبد خرید شما خالی است.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

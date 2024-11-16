@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <h1>حذف حساب کاربری</h1>
+    <p>آیا مطمئن هستید که می‌خواهید حساب کاربری خود را حذف کنید؟</p>
+    <form method="POST" action="{{ url_for('delete_account') }}">
+        <button type="submit" class="btn btn-danger">بله، حذف کن</button>
+        <a href="{{ url_for('dashboard') }}" class="btn btn-secondary">انصراف</a>
+    </form>
+</div>
+{% endblock %}

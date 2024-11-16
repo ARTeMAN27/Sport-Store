@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="text-center">محصولات ورزشی</h1>
+<div class="row">
+    {% for product in products %}
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <img src="{{ product.image_url }}" class="card-img-top" alt="{{ product.name }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.name }}</h5>
+                    <p class="card-text">{{ product.description }}</p>
+                    <p class="card-text">قیمت: {{ product.price }} تومان</p>
+                    <form action="{{ url_for('add_to_cart', product_id=product.id) }}" method="POST">
+                        <input type="number" name="quantity" value="1" min="1" class="form-control mb-2" required>
+                        <button type="submit" class="btn btn-primary">افزودن به سبد خرید</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

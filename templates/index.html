@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>محصولات ما</h1>
+<div class="row">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">محصول 1</h5>
+                <p class="card-text">قیمت: 100,000 تومان</p>
+                <form action="{{ url_for('add_to_cart') }}" method="POST">
+                    <input type="hidden" name="product_name" value="محصول 1">
+                    <input type="hidden" name="product_price" value="100,000 تومان">
+                    <button type="submit" class="btn btn-primary">اضافه به سبد خرید</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">محصول 2</h5>
+                <p class="card-text">قیمت: 200,000 تومان</p>
+                <form action="{{ url_for('add_to_cart') }}" method="POST">
+                    <input type="hidden" name="product_name" value="محصول 2">
+                    <input type="hidden" name="product_price" value="200,000 تومان">
+                    <button type="submit" class="btn btn-primary">اضافه به سبد خرید</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">محصول 3</h5>
+                <p class="card-text">قیمت: 300,000 تومان</p>
+                <form action="{{ url_for('add_to_cart') }}" method="POST">
+                    <input type="hidden" name="product_name" value="محصول 3">
+                    <input type="hidden" name="product_price" value="300,000 تومان">
+                    <button type="submit" class="btn btn-primary">اضافه به سبد خرید</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
